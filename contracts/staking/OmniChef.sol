@@ -113,6 +113,7 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
      * @dev anyone can call it and give any value as a parameter, regarding the msg.value
      */
     /// @dev Finding [L01]
+    /// @dev Finding [H04]
     function stake(uint256 value) public payable refund(value) returns (uint256) {
         // It updates the user´s staking balance
         stakes[msg.sender] = stakes[msg.sender].safe(SafeArithmetics.Operation.ADD, value);
