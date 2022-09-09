@@ -10,6 +10,7 @@ contract Omni is ERC20, Ownable {
     uint256 internal constant INITIAL_SUPPLY = 10000000;
     address public emergencyAdmin;
 
+    /// @dev Finding [L02]
     constructor(
         string memory name,
         string memory symbol,
@@ -27,10 +28,7 @@ contract Omni is ERC20, Ownable {
 
     function upgrade(address previousOwner, address owner) public {
         // Emergency Administrator in case OmniChef malfunctions
-        require(
-            owner == msg.sender || emergencyAdmin == msg.sender,
-            "INSUFFICIENT_PRIVILEDGES"
-        );
+        require(owner == msg.sender || emergencyAdmin == msg.sender, "INSUFFICIENT_PRIVILEDGES");
 
         // Transfer remaining rewards
         _transfer(previousOwner, owner, balanceOf(previousOwner));
