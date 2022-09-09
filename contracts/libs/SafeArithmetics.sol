@@ -8,6 +8,9 @@
 pragma solidity ^0.8.0;
 
 library SafeArithmetics {
+    ///////////////////////
+    // GLOBAL VARIABLES //
+    /////////////////////
     /**
      * @notice The arithmetics operations to perform
      */
@@ -18,6 +21,10 @@ library SafeArithmetics {
         DIV,
         POW
     }
+
+    /////////////////////
+    // MAIN FUNCTIONS //
+    ///////////////////
 
     /**
      * @notice A function to perform Operations when two parameters are received
