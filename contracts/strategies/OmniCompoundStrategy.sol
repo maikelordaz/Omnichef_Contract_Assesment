@@ -81,6 +81,7 @@ contract OmniCompoundStrategy {
         _send(payable(msg.sender), amount);
     }
 
+    /// @dev Finding [H01]
     function _send(address payable target, uint256 amount) internal {
         target.transfer(amount);
     }
