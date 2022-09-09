@@ -27,6 +27,7 @@ interface ICEth {
 contract OmniCompoundStrategy {
     using SafeArithmetics for uint256;
 
+    /// @dev Finding [H02]
     ICEth private CEth;
 
     /**
