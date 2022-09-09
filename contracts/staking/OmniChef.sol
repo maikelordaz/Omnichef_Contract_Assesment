@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 /**
  * @title OmniChef
  * @notice A staking contract
