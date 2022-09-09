@@ -97,6 +97,7 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
      * @dev It does not receive any parameters, but calls another function with the same name,
      * and this last one receives a parameter in this case, the entire msg.value
      */
+    /// @dev Finding [L01]
     function stake() external payable returns (uint256) {
         return stake(msg.value);
     }
@@ -111,6 +112,7 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
      * @dev It can be called by anyone
      * @dev anyone can call it and give any value as a parameter, regarding the msg.value
      */
+    /// @dev Finding [L01]
     function stake(uint256 value) public payable refund(value) returns (uint256) {
         // It updates the user´s staking balance
         stakes[msg.sender] = stakes[msg.sender].safe(SafeArithmetics.Operation.ADD, value);
@@ -134,6 +136,7 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
      * @dev it gives Omni tokens as rewards
      * @dev it updates user´s stats after the transfers, should be before
      */
+    /// @dev Finding [L01]
     function _reward(uint256 stake) internal {
         // It calculates the rewards for the caller
         uint256 reward = stake * (block.timestamp - times[msg.sender]);
