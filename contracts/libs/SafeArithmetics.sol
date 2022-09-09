@@ -34,6 +34,7 @@ library SafeArithmetics {
      * @dev It calls another function with the same name, but this last one receive three
      * parameters
      */
+    /// @dev Finding [I01]
     function safe(uint256 a, Operation op) internal pure returns (uint256) {
         return safe(a, op, a);
     }
