@@ -1,4 +1,8 @@
 {
+  "name": "Omniscia_test_Maikel_Ordaz",
+  "version": "1.0.0",
+  "author": "Maikel Ordaz",
+  "license": "MIT",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
@@ -23,7 +27,7 @@
     "coverage": "yarn hardhat coverage",
     "deploy": "yarn hardhat deploy",
     "format": "yarn prettier --write .",
-    "slither": "slither ./contracts --solc-remaps '@openzeppelin=node_modules/@openzeppelin' --exclude naming-convention,external-function,low-level-calls",
+    "slither": "slither . --solc-remaps '@openzeppelin=node_modules/@openzeppelin' --exclude naming-convention,external-function,low-level-calls",
     "toolbox": "docker run -it --rm -v $PWD:/src trailofbits/eth-security-toolbox",
     "lint": "solhint 'contracts/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix"
