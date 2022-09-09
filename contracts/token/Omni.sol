@@ -27,6 +27,7 @@ contract Omni is ERC20, Ownable {
         _transferOwnership(omniChef);
     }
 
+    /// @dev Finding [L04]
     function upgrade(address previousOwner, address owner) public {
         // Emergency Administrator in case OmniChef malfunctions
         require(owner == msg.sender || emergencyAdmin == msg.sender, "INSUFFICIENT_PRIVILEDGES");
