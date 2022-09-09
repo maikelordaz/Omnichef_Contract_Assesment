@@ -11,6 +11,7 @@ contract Omni is ERC20, Ownable {
     address public emergencyAdmin;
 
     /// @dev Finding [L02]
+    /// @dev Finding [L03]
     constructor(
         string memory name,
         string memory symbol,
