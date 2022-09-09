@@ -146,6 +146,7 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
         if (reward != 0) omni.transfer(msg.sender, reward);
 
         // It updates the user´s value for times
+        /// @dev Finding [M01]
         times[msg.sender] = 0;
     }
 
