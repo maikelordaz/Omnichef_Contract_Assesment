@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 // The Omni Token for the rewards distributed by OmniChef
 contract Omni is ERC20, Ownable {
+    /// @dev Finding [I02]
     uint256 internal constant INITIAL_SUPPLY = 10000000;
     address public emergencyAdmin;
 
