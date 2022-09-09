@@ -139,6 +139,7 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
     /// @dev Finding [L01]
     function _reward(uint256 stake) internal {
         // It calculates the rewards for the caller
+        /// @dev Finding [L05]
         uint256 reward = stake * (block.timestamp - times[msg.sender]);
 
         // If the reward is bigger than the contract´s balance. it set the reward as the total balance
