@@ -178,6 +178,7 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
         totalStakes = totalStakes.safe(SafeArithmetics.Operation.SUB, value);
 
         // function from OmniCompoundStrategy
+        /// @dev Finding [M02]
         _unlock(amount);
         // It calculates the rewards
         _reward(value);
