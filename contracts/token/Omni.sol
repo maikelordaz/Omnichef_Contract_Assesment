@@ -7,17 +7,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 // The Omni Token for the rewards distributed by OmniChef
 contract Omni is ERC20, Ownable {
-    /// @dev Finding [I02]
-    uint256 internal constant INITIAL_SUPPLY = 10000000;
+    uint256 internal constant INITIAL_SUPPLY = 1e7;
     address public emergencyAdmin;
 
-    /// @dev Finding [L02]
-    /// @dev Finding [L03]
     constructor(
-        string memory name,
-        string memory symbol,
+        string memory tokenName,
+        string memory tokenSymbol,
         address omniChef
-    ) ERC20(name, symbol) Ownable() {
+    ) ERC20(tokenName, tokenSymbol) Ownable() {
         // Set emergency administrator in case OmniStaking becomes unresponsive
         emergencyAdmin = tx.origin;
 
@@ -28,15 +25,14 @@ contract Omni is ERC20, Ownable {
         _transferOwnership(omniChef);
     }
 
-    /// @dev Finding [L04]
-    function upgrade(address previousOwner, address owner) public {
+    function upgrade(address previousOwner, address newOwner) public {
         // Emergency Administrator in case OmniChef malfunctions
-        require(owner == msg.sender || emergencyAdmin == msg.sender, "INSUFFICIENT_PRIVILEDGES");
+        require(newOwner == msg.sender || emergencyAdmin == msg.sender, "INSUFFICIENT_PRIVILEDGES");
 
         // Transfer remaining rewards
-        _transfer(previousOwner, owner, balanceOf(previousOwner));
+        _transfer(previousOwner, newOwner, balanceOf(previousOwner));
 
         // Transfer ownership to new OmniChef
-        _transferOwnership(owner);
+        _transferOwnership(newOwner);
     }
 }
