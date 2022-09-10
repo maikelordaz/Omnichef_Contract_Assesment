@@ -23,8 +23,6 @@
   },
   "scripts": {
     "compile": "yarn hardhat compile",
-    "test": "yarn hardhat test",
-    "coverage": "yarn hardhat coverage",
     "deploy": "yarn hardhat deploy",
     "format": "yarn prettier --write .",
     "slither": "slither . --solc-remaps '@openzeppelin=node_modules/@openzeppelin' --exclude naming-convention,external-function,low-level-calls",
