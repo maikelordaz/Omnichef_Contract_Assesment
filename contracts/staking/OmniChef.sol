@@ -47,6 +47,9 @@ contract OmniChef is OmniCompoundStrategy, Ownable {
      */
 
     function stake() external payable returns (uint256) {
+        if (msg.value == 0) {
+            revert OmniChef__StakingMalfunction();
+        }
         return _stake(msg.value);
     }
 
